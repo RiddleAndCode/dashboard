@@ -11,24 +11,23 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.modalHeader:before{
-    background: #fff;
-}
-
-.modalHeader span{
-    font-weight: bold !important;
-    color: rgb(0, 0, 0) !important;
-}
-
 .ui.modal > .content {
     padding: 0px !important;
-    background-color: #000000;
-    color: #fff;
+    color: #000000;
+    background-color: #fff;
 }
 
 .ui.modal > .close {
     font-size: 27px !important;
-    color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
     top: 0.5rem !important;
     right: 1.5rem !important;
+}
+.modal-header span {
+    font-weight: bold !important;
+}
+
+.modal-header {
+    background-color: black !important;
+    color: white !important;
 }

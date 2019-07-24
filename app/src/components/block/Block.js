@@ -29,7 +29,7 @@ export default class Block extends Component {
         blockStyle['maxHeight'] = calc.maxHeight + 'px';
         
         return(
-            <div className="parent">
+            <div className="parent animation-slide-in-from-bottom">
             <div className="blockTitle"  style={blockTitleStyle} onClick={this.handleClick.bind(this)}>
                 <span id='title'>Block</span>
                 <span className="blockNo" id={'title-'+this.props.block}>#{this.props.block}</span>
