@@ -1,5 +1,5 @@
-.bgreen{
-    border:1px solid #00C8A8;
+.bblack{
+    border:1px solid #000000;
     border-radius: 8px;
     resize: both;
     position: relative;
@@ -20,10 +20,10 @@
     margin-bottom: 10px;
 }
 .blockTitle #title {
-    color: #00C8A8;
+    color: #000000;
 }
 .blockTitle .blockNo {
-    color: #fff;
+    color: #000000;
 }
 
 .box{
@@ -54,22 +54,22 @@
     display: inline-block;
     position: absolute;
     margin-top: 20px;
-  }
+}
 
-  .front{
+.front{
     position: absolute;
     left: -8px;
-  }
+}
 
-  .back {
+.back {
     position: absolute;
     right: -8px;
-  }
+}
 
-  .line{
+.line{
     width: 34px;
     height: 8px;
     border-bottom: 2px solid rgba(187, 187, 187, 0.6);
     position: absolute;
     margin-left: 15px;
-    }
+}

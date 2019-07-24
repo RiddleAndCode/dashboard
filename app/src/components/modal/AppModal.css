@@ -17,15 +17,18 @@ pre {
 
 .modalHeader span{
     font-weight: bold !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .ui.modal > .content {
     padding: 0px !important;
+    background-color: #000000;
+    color: #fff;
 }
 
-.ui.modal > .close{
+.ui.modal > .close {
     font-size: 27px !important;
-    color: rgba(0, 0, 0, 0.85) !important;
+    color: rgb(0, 0, 0) !important;
     top: 0.5rem !important;
     right: 1.5rem !important;
 }

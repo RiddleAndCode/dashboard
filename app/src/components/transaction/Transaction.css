@@ -1,9 +1,9 @@
 .fontSize100{
     font-size: 70px;
 }
-.greenColor{
+.blackColor{
     text-transform: uppercase;
-    color: #39BA91 !important;
+    color: #000000 !important;
     font-weight: bold !important;
 }
 .upperCase{
@@ -53,11 +53,12 @@ i.icon, i.icons {
 }
 
 .create {
-background-color: #C6E5EB !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .transfer {
-    background-color: #82CEE2 !important;
+    background-color: rgb(228, 228, 228) !important;
 }
 
 .cardHeader .right{

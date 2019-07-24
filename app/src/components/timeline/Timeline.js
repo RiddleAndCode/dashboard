@@ -10,7 +10,7 @@ class Timeline extends Component {
     return (
       <Container fluid={true} className='timeline'>
       <div id="dash"><Stats name='Dashboard'/></div>
-      <div  id="blockDisplay" className='blockDisplay'>
+      <div id="blockDisplay" className='blockDisplay'>
       <Grid className="letOverflow">
       {
         this.props.state.map((blockNo) => {

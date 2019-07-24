@@ -34,7 +34,7 @@ export default class Block extends Component {
                 <span id='title'>Block</span>
                 <span className="blockNo" id={'title-'+this.props.block}>#{this.props.block}</span>
             </div>
-            <div id={this.props.block} style={blockStyle} className="four wide column bgreen cards box">
+            <div id={this.props.block} style={blockStyle} className="four wide column bblack cards box">
             <span id={'back-'+this.props.block} className={this.props.block+' dot back'}>
             {this.props.prevBlock && (<div className="line"></div>)}
             </span>

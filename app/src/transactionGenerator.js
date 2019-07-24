@@ -5,10 +5,8 @@ const API_PATH = 'http://ipdb3.riddleandcode.com:80/api/v1/'
 const conn = new driver.Connection(API_PATH)
 const alice = new driver.Ed25519Keypair()
 const bob = new driver.Ed25519Keypair()
-const MIN = 1;
-const MAX = 10;
 
-function createTx(){
+export function createTx(){
     const tx = driver.Transaction.makeCreateTransaction(
         { city: 'Berlin, DE', temperature: 22, datetime: new Date().toString() },
         { what: 'My first BigchainDB transaction' },
@@ -21,7 +19,7 @@ function createTx(){
     conn.postTransactionAsync(txSigned).then(tx => console.log(tx.id));
 }
 
-function transferTx(){
+export function transferTx(){
     const tx = driver.Transaction.makeCreateTransaction(
         { city: 'Berlin, DE', temperature: 22, datetime: new Date().toString() },
         { what: 'My first BigchainDB transaction' },
@@ -41,17 +39,3 @@ function transferTx(){
             conn.postTransactionAsync(txTransferBobSigned).then(tx => console.log(tx.id));
     })
 }
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function runTest(){
-const runs = getRandomInt(MIN, MAX);
-for(let i=1;i< runs; i++){
-    if(i%2 == 0) transferTx()
-    else createTx();
-}
-}
-
-runTest();
