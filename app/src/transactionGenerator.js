@@ -16,7 +16,7 @@ export function createTx(){
         alice.publicKey
     )
     const txSigned = driver.Transaction.signTransaction(tx, alice.privateKey)
-    conn.postTransactionAsync(txSigned).then(tx => console.log(tx.id));
+    conn.postTransactionAsync(txSigned).then(tx => console.log(tx.id))
 }
 
 export function transferTx(){
