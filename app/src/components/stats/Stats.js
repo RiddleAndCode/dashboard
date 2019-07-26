@@ -11,10 +11,10 @@ export default class Stats extends Component {
           <Menu.Item as='div' active>
             {this.props.name}
           </Menu.Item>
-          <Menu.Item as='div' >
+          {/* <Menu.Item as='div' >
             {'Source:' }
             <span>{this.props.context}</span>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item as='div' >
             {'Block Height: '}
             <span>{this.props.state.lastBlock}</span>
