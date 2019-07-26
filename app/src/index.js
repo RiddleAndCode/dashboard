@@ -10,7 +10,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import appReducer from './reducers/index'
 import setupSocket from './services/sockets';
-import { createTx } from './transactionGenerator';
 
 const store = createStore(appReducer, composeWithDevTools(applyMiddleware(
   thunk
@@ -26,6 +25,3 @@ ReactDOM.render(
       document.getElementById('root')
     );
 registerServiceWorker();
-
-//transferTx();
-createTx();
