@@ -8,7 +8,7 @@ export default connect(
     (state, ownProps) => {
         if(state.Transaction[ownProps.block]){
             return {state: Object.keys(state.Transaction[ownProps.block])}
-        }else{
+        } else {
             return {state: []}
         }
     },

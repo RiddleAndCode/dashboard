@@ -9,7 +9,7 @@ const initialState = {
 const Stats = (state = initialState, action) => {
   switch (action.type) {
     case 'UPDATE_STATS':
-      const connectionText = action.connected?'Connected to: '+ bigchaindb.host:'Disconnected';
+      const connectionText = action.connected?'Connected to: '+bigchaindb.host : 'Disconnected';
       return Object.assign({}, {connected: connectionText, lastBlock: action.blockHeight, totalTx: action.totalTx});
     default:
       return state;

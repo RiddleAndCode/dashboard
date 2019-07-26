@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import Transaction from '../../containers/Transaction';
 import './Block.css';
-import * as utils from '../../services/utils'; 
+import * as utils from '../../services/utils';
 
 export default class Block extends Component {
     maxTxWidth = 324;
