@@ -2,6 +2,7 @@ import { validTransaction, updateStats, checkBlocks } from '../actions/actions';
 import { getTransaction } from './bdb'
 import bigchaindb from '../configs/bigchaindb.config.json'
 
+
 let connected = false;
 const protocol = bigchaindb.secure?'wss://':'ws://';
 
@@ -13,9 +14,28 @@ const setupSocket = (dispatch) => {
                               +bigchaindb.api
                               +bigchaindb.validTx)
 
+  /* timeout implementation start */
+  var timerId = 0; 
+  function keepAlive() { 
+    var timeout = 20000;  
+    if (socket.readyState === socket.OPEN) {  
+      socket.send('');  
+    }  
+    timerId = setTimeout(keepAlive, timeout);  
+  }  
+
+  function cancelKeepAlive() {  
+    if (timerId) {  
+      clearTimeout(timerId);  
+    }  
+  }
+  /* end */
+
   socket.onopen = () => {
     connected = true;
     dispatch(updateStats(connected, '---', '---'));
+    
+    keepAlive();
   }
   socket.onmessage = (event) => {
     const data = JSON.parse(event.data);
@@ -27,6 +47,8 @@ const setupSocket = (dispatch) => {
   }
   socket.onclose = () => {
     connected = false;
+
+    cancelKeepAlive()
   }
 
   return socket
