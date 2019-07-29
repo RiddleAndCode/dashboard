@@ -7,6 +7,7 @@ import './Timeline.css';
 import { setSocket } from '../../services/store'
 import { createTx } from '../../transactionGenerator'
 
+
 class Timeline extends Component {
 
   handleClick() {

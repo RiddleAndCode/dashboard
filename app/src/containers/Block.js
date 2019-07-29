@@ -14,6 +14,7 @@ export default connect(
     },
     dispatch => ({
         onBlockClick: data =>{
+            
             bdb.getBlock(data).then(result => {
              dispatch(setModal('Block Details', result, true));
             })

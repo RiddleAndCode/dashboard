@@ -3,7 +3,7 @@ import { HTTP_API_PATH } from '../configs/bigchaindbConfig'
 
 // var protocol = bigchaindb.secure?'https://':'http://';
 
-var conn = new driver.Connection(HTTP_API_PATH);
+export var conn = new driver.Connection(HTTP_API_PATH);
 
 export const getTransaction = (txId) => {
     return conn.getTransaction(txId).then(value => {
