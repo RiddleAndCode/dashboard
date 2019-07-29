@@ -1,32 +1,29 @@
 import { validTransaction, updateStats, checkBlocks } from '../actions/actions';
 import { getTransaction } from './bdb'
-import bigchaindb from '../configs/bigchaindb.config.json'
 
 let connected = false;
-const protocol = bigchaindb.secure?'wss://':'ws://';
+// const protocol = bigchaindb.secure?'wss://':'ws://';
 
-const setupSocket = (dispatch) => {
 
-  const socket = new WebSocket(protocol + bigchaindb.host.split(':')[0]
-                              +':'
-                              +bigchaindb.ws_port
-                              +bigchaindb.api
-                              +bigchaindb.validTx)
+var setupSocket = (dispatch, WS_API_PATH, HTTP_API_PATH) => {
 
+  var socket = new WebSocket(WS_API_PATH)
+  
   socket.onopen = () => {
     connected = true;
-    dispatch(updateStats(connected, '---', '---'));
+    dispatch(updateStats(connected, HTTP_API_PATH, '---'));
   }
   socket.onmessage = (event) => {
     const data = JSON.parse(event.data);
     getTransaction(data.transaction_id).then(txData => {
       dispatch(validTransaction(data.transaction_id, data.height, txData));
       dispatch(checkBlocks(data.height));
-      dispatch(updateStats(connected, data.height));
+      dispatch(updateStats(connected, HTTP_API_PATH, data.height));
     });
   }
   socket.onclose = () => {
     connected = false;
+    dispatch(updateStats(connected, '', '---'));
   }
 
   return socket

@@ -1,10 +1,9 @@
 import * as driver from 'bigchaindb-driver';
-import bigchaindb from '../configs/bigchaindb.config.json'
+import { HTTP_API_PATH } from '../configs/bigchaindbConfig'
 
-var protocol = bigchaindb.secure?'https://':'http://';
+// var protocol = bigchaindb.secure?'https://':'http://';
 
-var API_PATH = protocol + bigchaindb.host + bigchaindb.api
-var conn = new driver.Connection(API_PATH);
+var conn = new driver.Connection(HTTP_API_PATH);
 
 export const getTransaction = (txId) => {
     return conn.getTransaction(txId).then(value => {
@@ -14,8 +13,4 @@ export const getTransaction = (txId) => {
 
 export const getBlock = (blockHeight) => {
     return conn.getBlock(blockHeight);
-}
-
-export const setNewConnection = (host, ws_port, api) => {
-
 }

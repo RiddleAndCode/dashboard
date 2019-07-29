@@ -20,7 +20,7 @@ export default class Block extends Component {
         const calc = this.predictBlockSize();
         const blockTitleStyle = {
             minWidth: calc.maxWidth+'px',
-            maxWidth: calc.maxWidth+'px',
+            maxWidth: calc.maxWidth+'px'
         }
         const blockStyle = {
             minWidth: calc.maxWidth+'px',

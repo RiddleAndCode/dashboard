@@ -1,5 +1,5 @@
 {
-    "host": "ipdb3.riddleandcode.com",
+    "host": "ipdb3.face.com",
     "ws_port": 80,
     "api": "/api/v1/",
     "validTx": "streams/valid_transactions",
