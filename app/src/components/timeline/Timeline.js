@@ -4,27 +4,20 @@ import Stats from '../../containers/Stats'
 import Block from '../../containers/Block'
 import AppModal from '../../containers/AppModal';
 import './Timeline.css';
-import { setSocket } from '../../services/store'
-import { createTx } from '../../transactionGenerator'
-
+// import { createTx } from '../../transactionGenerator'
 
 class Timeline extends Component {
 
-  handleClick() {
-    setSocket("ws://ipdb3.riddleandcode.com:80/api/v1/streams/valid_transactions", "http://ipdb3.riddleandcode.com:80/api/v1/")
-  }
-
-  handleClick2() {
-    createTx()
-  }
+  // handleClick() {
+  //   createTx()
+  // }
 
   render() {
     return (
       <Container fluid={true} className='timeline'>
       <div id="dash"><Stats name='Dashboard'/></div>
 
-      <button onClick={this.handleClick.bind(this)}> connect </button>
-      <button onClick={this.handleClick2.bind(this)}> createTx </button>
+      {/* <button onClick={this.handleClick.bind(this)}> createTx </button> */}
 
       <div id="blockDisplay" className='blockDisplay'>
       <Grid className="letOverflow">

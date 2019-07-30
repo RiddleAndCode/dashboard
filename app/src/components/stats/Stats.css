@@ -24,6 +24,22 @@ a {
     display: block !important;
 }
 
+.connection {
+    cursor: pointer;
+}
+
 div.item span{
     font-weight: bold !important;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.connection-url {
+    padding-right: 10px;
 }

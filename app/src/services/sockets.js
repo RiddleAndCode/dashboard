@@ -2,7 +2,6 @@ import { validTransaction, updateStats, checkBlocks } from '../actions/actions';
 import { getTransaction } from './bdb'
 
 let connected = false;
-// const protocol = bigchaindb.secure?'wss://':'ws://';
 
 
 var setupSocket = (dispatch, WS_API_PATH, HTTP_API_PATH) => {

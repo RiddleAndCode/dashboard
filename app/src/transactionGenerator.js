@@ -1,12 +1,12 @@
 import * as driver from 'bigchaindb-driver';
+import { HTTP_API_PATH } from './configs/bigchaindb.config';
 
-//const API_PATH = 'http://localhost:9984/api/v1/'
-const API_PATH = 'http://ipdb3.riddleandcode.com:80/api/v1/'
-const conn = new driver.Connection(API_PATH)
 const alice = new driver.Ed25519Keypair()
 const bob = new driver.Ed25519Keypair()
 
 export function createTx(){
+    const conn = new driver.Connection(HTTP_API_PATH)
+
     const tx = driver.Transaction.makeCreateTransaction(
         { city: 'Berlin, DE', temperature: 22, datetime: new Date().toString() },
         { what: 'My first BigchainDB transaction' },
@@ -20,6 +20,8 @@ export function createTx(){
 }
 
 export function transferTx(){
+    const conn = new driver.Connection(HTTP_API_PATH)
+
     const tx = driver.Transaction.makeCreateTransaction(
         { city: 'Berlin, DE', temperature: 22, datetime: new Date().toString() },
         { what: 'My first BigchainDB transaction' },
