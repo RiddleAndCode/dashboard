@@ -15,7 +15,7 @@
   display: block;
 }
 
-@media (max-width : 500px){
+@media (max-width : 800px){
   .rnc-logo {
     height: 30px;
   }
