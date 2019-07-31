@@ -1,0 +1,72 @@
+.settings {
+    width: 300px;
+    right: 40px;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+@media (max-width : 800px){
+    .settings {
+        width: 100%;
+        right: 0;
+    }
+}
+
+.settings div {
+    padding: 5px;
+}
+
+.settings-btn {
+    background-color: white;
+    color: black;
+}
+
+.settings-btn {
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    line-height: 1.5;
+    border-radius: 0.15rem;
+}
+.settings-btn:focus,
+.settings-btn:hover {
+    background-color: rgba(230, 230, 230);
+}
+
+.settings-input {
+    width: 100%;
+    border: 0;
+    height: 22px;
+}
+
+.error {
+    background-color: rgb(255, 180, 180);
+    transition: 0.5s;
+}
+
+.close-icon {
+    font-size: 25px;
+    float: right;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.hide {
+    display: none;
+}

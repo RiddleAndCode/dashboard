@@ -8,12 +8,13 @@ export default connect(
     (state, ownProps) => {
         if(state.Transaction[ownProps.block]){
             return {state: Object.keys(state.Transaction[ownProps.block])}
-        }else{
+        } else {
             return {state: []}
         }
     },
     dispatch => ({
         onBlockClick: data =>{
+            
             bdb.getBlock(data).then(result => {
              dispatch(setModal('Block Details', result, true));
             })

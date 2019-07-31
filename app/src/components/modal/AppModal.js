@@ -9,8 +9,10 @@ class AppModal extends Component {
   render() {
     return (
       <div>
-        <Modal dimmer={true} open={this.props.state.open} onClose={this.close} closeIcon>
-          <Modal.Header className="modalHeader"><span>{this.props.state.title}</span></Modal.Header>
+        <Modal dimmer={true} open={this.props.state.open} onClose={this.close} closeIcon className="animation-slide-in-from-bottom">
+        <Modal.Header className="modal-header">
+              <span>{this.props.state.title}</span>
+          </Modal.Header>
           <Modal.Content>
             <Modal.Description>
               <pre className="modal-trim">{JSON.stringify(this.props.state.content,null, 2)}</pre>

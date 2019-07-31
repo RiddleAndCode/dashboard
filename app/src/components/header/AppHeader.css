@@ -1,6 +1,22 @@
 .logo-item {
-    margin-left: 3%;
-    padding: 20px;
-    position: relative;
-    z-index: 5;
+  margin-left: 3%;
+  padding-top: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.App-header {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.rnc-logo{
+  height: 50px;
+  fill: white;
+  display: block;
+}
+
+@media (max-width : 800px){
+  .rnc-logo {
+    height: 30px;
   }
+} 

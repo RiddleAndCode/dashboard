@@ -14,9 +14,10 @@ export const setModal = (title, content, open) => ({
     open
 })
 
-export const updateStats = (connected, blockHeight) => ({
+export const updateStats = (connected, host, blockHeight) => ({
     type: types.UPDATE_STATS,
     connected,
+    host,
     blockHeight
 })
 

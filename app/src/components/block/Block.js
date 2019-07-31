@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import Transaction from '../../containers/Transaction';
 import './Block.css';
-import * as utils from '../../services/utils'; 
+import * as utils from '../../services/utils';
 
 export default class Block extends Component {
     maxTxWidth = 324;
@@ -20,7 +20,7 @@ export default class Block extends Component {
         const calc = this.predictBlockSize();
         const blockTitleStyle = {
             minWidth: calc.maxWidth+'px',
-            maxWidth: calc.maxWidth+'px',
+            maxWidth: calc.maxWidth+'px'
         }
         const blockStyle = {
             minWidth: calc.maxWidth+'px',
@@ -29,12 +29,12 @@ export default class Block extends Component {
         blockStyle['maxHeight'] = calc.maxHeight + 'px';
         
         return(
-            <div className="parent">
+            <div className="parent animation-slide-in-from-bottom">
             <div className="blockTitle"  style={blockTitleStyle} onClick={this.handleClick.bind(this)}>
                 <span id='title'>Block</span>
                 <span className="blockNo" id={'title-'+this.props.block}>#{this.props.block}</span>
             </div>
-            <div id={this.props.block} style={blockStyle} className="four wide column bgreen cards box">
+            <div id={this.props.block} style={blockStyle} className="four wide column bblack cards box">
             <span id={'back-'+this.props.block} className={this.props.block+' dot back'}>
             {this.props.prevBlock && (<div className="line"></div>)}
             </span>

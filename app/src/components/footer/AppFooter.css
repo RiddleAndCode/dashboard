@@ -9,6 +9,40 @@
 }
 
 .footer__copyright .menu__link{
-    color: #E8EBEF !important;
+    color: rgb(255, 255, 255) !important;
     font-size: 150%;
 }
+
+/* copied from styles.css */
+
+ 
+  .menu__link:not(.dropdown-toggle):after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    display: block;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 0.5rem;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  }
+  @media (min-width: 58em) {
+    .menu__link:not(.dropdown-toggle):after {
+      bottom: 1.3rem;
+    }
+  }
+  .menu__link.active:after,
+  .menu__link:focus:after,
+  .menu__link:hover:after {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }

@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import Stats from '../../containers/Stats'
 import Block from '../../containers/Block'
 import AppModal from '../../containers/AppModal';
 import './Timeline.css';
 
 class Timeline extends Component {
+
   render() {
     return (
-      <Container fluid={true} className='timeline'>
+      <div className='timeline'>
       <div id="dash"><Stats name='Dashboard'/></div>
-      <div  id="blockDisplay" className='blockDisplay'>
+      <div id="blockDisplay" className='blockDisplay'>
       <Grid className="letOverflow">
       {
         this.props.state.map((blockNo) => {
@@ -20,7 +21,7 @@ class Timeline extends Component {
       </Grid>
       </div>
       <AppModal/>
-      </Container>
+      </div>
     );
   }
   

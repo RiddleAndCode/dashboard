@@ -2,12 +2,28 @@
   margin: 0 auto;
 }
 
-.letOverflow{
-  overflow: scroll;
+.letOverflow {
+  overflow: scroll !important;
   flex-wrap: nowrap !important;
-  overflow-x: scroll;
-  overflow-y: none;
+  overflow-x: scroll !important;
+  overflow-y: visible !important;
 }
+
+.letOverflow::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.letOverflow::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+.letOverflow::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, .5);
+}
+.letOverflow::-webkit-scrollbar-track { 
+  background-color: #fff; 
+  border-radius: 8px; 
+} 
 
 ::-webkit-scrollbar {
   display: none;
