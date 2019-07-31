@@ -48,7 +48,7 @@ export default class Settings extends Component {
     newConnect() {
         if(this.state.host !== "" && this.state.port !== "" && +this.state.port >= 0){
             this.resetState();
-            this.props.toggleSettings();
+            this.props.hideSettings();
             updateSocket(this.state.host, this.state.port, this.state.api, this.state.validTx, this.state.secure);
         }
         if(this.state.host === "")
@@ -68,13 +68,13 @@ export default class Settings extends Component {
 
     handleClick = (e) => {
         // make shure that the the click happened outside of the settings modal and not on the connection url
-        if(!this.node.contains(e.target) && e.target.className !== "connection-url"){ this.props.toggleSettings(); }
+        if(!this.node.contains(e.target) && e.target.className !== "connection-url"){ this.props.hideSettings(); }
     } 
 
     render(){
         return(
             <div ref={node => this.node = node} className={this.props.visible ? 'settings' : 'settings hide'}>
-                <FaWindowClose className="close-icon" onClick={this.props.toggleSettings}/>
+                <FaWindowClose className="close-icon" onClick={this.props.hideSettings}/>
                 <div>
                     <label> 
                         Host: <br/>

@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import Stats from '../../containers/Stats'
 import Block from '../../containers/Block'
 import AppModal from '../../containers/AppModal';
 import './Timeline.css';
-// import { createTx } from '../../transactionGenerator'
 
 class Timeline extends Component {
 
-  // handleClick() {
-  //   createTx()
-  // }
-
   render() {
     return (
-      <Container fluid={true} className='timeline'>
+      <div className='timeline'>
       <div id="dash"><Stats name='Dashboard'/></div>
-
-      {/* <button onClick={this.handleClick.bind(this)}> createTx </button> */}
-
       <div id="blockDisplay" className='blockDisplay'>
       <Grid className="letOverflow">
       {
@@ -29,7 +21,7 @@ class Timeline extends Component {
       </Grid>
       </div>
       <AppModal/>
-      </Container>
+      </div>
     );
   }
   

@@ -5,8 +5,14 @@
     background-color: black;
     color: white;
     padding: 5px;
-    border-radius: 5px;
     border: 1px solid white;
+}
+
+@media (max-width : 500px){
+    .settings {
+        width: 100%;
+        right: 0;
+    }
 }
 
 .settings div {
@@ -62,9 +68,5 @@
 }
 
 .hide {
-    visibility: hidden;
-}
-
-.show {
-    visibility: visible;
+    display: none;
 }

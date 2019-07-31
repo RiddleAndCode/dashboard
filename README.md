@@ -30,7 +30,7 @@ The app is structured as a react app created using create-react-app with added r
 
 The project can be configured using 2 JSON configuration files located at `src/configs`.
 
-1. `bigchaindb.config.json` This file can be used to configure the connection parameters for connecting to the BigchainDB network.
+1. `bigchaindb.config.js` This file can be used to configure the connection parameters for connecting to the BigchainDB network.
 1. `ui-mapper.config.json` This file can be used to configure to modify what user sees in the description for transfer & create transaction card, application context name and the maximum number of blocks a user can see on the UI.
 
 The fields `create.description` & `transfer.description` are used to parse the data from the raw transaction of create and transfer types respectively.
@@ -40,7 +40,7 @@ The fields `create.description` & `transfer.description` are used to parse the d
 1. Clone this repository
 2. Navigate to app folder with: `cd dashboard/app/`
 3. Install node modules: `npm install`
-4. Modify the `bigchaindb.config.json` & `ui-mapper.config.json` as per the requirement
+4. Modify the `bigchaindb.config.js` & `ui-mapper.config.json` as per the requirement
 5. Run the dev server using `npm start` and open the browser on `localhost:3000`
 6. To create a production build you can use `npm run build`
 

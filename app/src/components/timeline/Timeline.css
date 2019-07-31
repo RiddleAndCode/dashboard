@@ -6,7 +6,7 @@
   overflow: scroll !important;
   flex-wrap: nowrap !important;
   overflow-x: scroll !important;
-  overflow-y: none;
+  overflow-y: visible !important;
 }
 
 .letOverflow::-webkit-scrollbar {

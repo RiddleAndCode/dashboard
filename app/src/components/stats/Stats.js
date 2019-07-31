@@ -13,12 +13,17 @@ export default class Stats extends Component {
     }
 
     this.toggleSettings = this.toggleSettings.bind(this);
+    this.hideSettings = this.hideSettings.bind(this);
   }
 
   activeIndex = 0;
 
   toggleSettings() {
     this.setState({visible: !this.state.visible})
+  }
+
+  hideSettings() {
+    this.setState({visible: false})
   }
     
   render() {
@@ -34,12 +39,12 @@ export default class Stats extends Component {
         </Menu.Item>
         <div className="connected">
           <Menu.Item as='div' className="connRight">
-            <span ref="connection" onClick={this.toggleSettings.bind(this)} className="connection">
+            <span ref="connection" onClick={this.toggleSettings} className="connection">
             <span className="connection-url">{this.props.state.connected} </span>
             { this.state.visible ? (<FaChevronUp/>) : (<FaChevronDown/>) } 
             </span>
           </Menu.Item>
-          <Settings visible={this.state.visible} toggleSettings={this.toggleSettings} />
+          <Settings visible={this.state.visible} hideSettings={this.hideSettings} toggleSettings={this.toggleSettings} />
         </div>
       </Container>
     </Menu>
